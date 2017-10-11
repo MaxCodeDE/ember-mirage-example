@@ -1,0 +1,13 @@
+<center>
+    <h1>Cool posts:</h1>
+    <hr>
+    {{#each model as |post|}}
+        <p class="post-header">{{post.name}}</p>
+        <p>Author: {{post.author}}</p>
+        <p>Times read: {{post.timesRead}}</p>
+        <p>{{if post.isEmberPost 'YEAH EMBER!' 'Ember where are you?'}}</p>
+        <hr>
+    {{else}}
+        <p>No posts yet :C</p>
+    {{/each}}
+</center>
