@@ -7,4 +7,6 @@ export default DS.Model.extend({
     timesRead: DS.attr('Number'),
     isEmberPost: DS.attr('Boolean'),
     
+    comments: DS.hasMany('comment')
+    
 });

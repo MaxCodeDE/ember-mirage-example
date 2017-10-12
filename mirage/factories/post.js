@@ -10,15 +10,22 @@ export default Factory.extend({
     },
 
     author: faker.name.findName(),
-    
+
     timesRead() {
         return faker.random.number();
     },
 
     isEmberPost() {
         return faker.random.boolean();
+    },
+
+    // Creates hasMany relationships
+    afterCreate(post, server) {
+        server.createList('comment', 2, {
+            post
+        });
     }
-    
+
     // Note:
     // if uses property as function for each model the faker property will be chanced
     // if uses propery without function each model will be the same value for this property
